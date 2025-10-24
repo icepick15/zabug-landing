@@ -1,0 +1,24 @@
+[
+  {
+    "code": "TOP5",
+    "type": "percentage",
+    "value": 30,
+    "maxUses": 10,
+    "currentUses": 0,
+    "expiresAt": "2025-11-01T23:59:59Z",
+    "active": true,
+    "appliesTo": ["template", "template-setup"],
+    "description": "30% off launch discount"
+  },
+  {
+    "code": "EARLYBIRD15",
+    "type": "percentage",
+    "value": 15,
+    "maxUses": 5,
+    "currentUses": 0,
+    "expiresAt": "2025-10-31T23:59:59Z",
+    "active": true,
+    "appliesTo": ["template", "template-setup"],
+    "description": "20% off for early adopters"
+  }
+]
