@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const year = new Date().getFullYear();
 
@@ -16,8 +17,14 @@ const MarketingFooter: React.FC = () => {
       <div className="mx-auto max-w-6xl px-6 sm:px-12">
         <div className="grid gap-12 md:grid-cols-3">
           <div>
-            <Link href="/" className="text-lg font-semibold text-white sm:text-xl">
-              Premium E-commerce Template
+            <Link href="/" className="inline-block">
+              <Image 
+                src="/zabug.png" 
+                alt="Zabug" 
+                width={140} 
+                height={46}
+                className="h-18 w-auto"
+              />
             </Link>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-slate-400">
               Launch a polished online store in days, not weeks. Built with Next.js, Paystack ready, and fully customisable for your brand.

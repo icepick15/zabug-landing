@@ -1,5 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const navItems = [
   { label: 'Features', href: '#features' },
@@ -13,8 +14,15 @@ const MarketingNavbar: React.FC = () => {
     <header className="sticky top-0 z-30 w-full border-b border-slate-200 bg-white/90 backdrop-blur">
       <div className="mx-auto flex max-w-6xl flex-col gap-4 px-6 py-4 sm:px-12 md:flex-row md:items-center md:justify-between">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-lg font-semibold text-slate-900 sm:text-xl">
-            Premium E-commerce Template
+          <Link href="/" className="flex items-center gap-2">
+            <Image 
+              src="/zabug.png" 
+              alt="Zabug" 
+              width={200} 
+              height={80}
+              className="h-18 w-auto"
+              priority
+            />
           </Link>
           <Link
             href="#pricing"

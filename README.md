@@ -7,6 +7,7 @@ A complete SaaS landing page for selling Next.js e-commerce templates with Payst
 ### ✅ Implemented
 
 - **🎨 Modern Landing Page**
+
   - Responsive hero section with clear value proposition
   - Feature grid showcasing template benefits
   - Pricing section with original/discounted pricing display
@@ -15,6 +16,7 @@ A complete SaaS landing page for selling Next.js e-commerce templates with Payst
   - Clean, professional UI with Tailwind CSS
 
 - **💳 Paystack Payment Integration**
+
   - Custom payment form with plan selection
   - Phone number capture for Nigerian market (WhatsApp)
   - Payment initialization and verification
@@ -23,6 +25,7 @@ A complete SaaS landing page for selling Next.js e-commerce templates with Payst
   - Lead storage (JSON + MongoDB dual strategy)
 
 - **🎟️ Advanced Coupon System**
+
   - Percentage and fixed-amount discounts
   - Usage limits and expiration dates
   - Per-email usage tracking
@@ -31,17 +34,20 @@ A complete SaaS landing page for selling Next.js e-commerce templates with Payst
   - Visual price breakdown (original → discount → final)
 
 - **📋 Waitlist Management**
+
   - Affiliate program waitlist signup
   - Full contact capture (name, email, phone)
   - Email notifications for new signups
   - MongoDB + JSON storage
 
 - **📊 Dashboard Foundation**
+
   - Referral stats component (prepared for future use)
   - Dashboard shell layout
   - Analytics structure in place
 
 - **📧 Email Notifications**
+
   - Zeptomail integration (HTTP API)
   - Payment confirmation emails
   - Waitlist confirmation emails
@@ -104,7 +110,7 @@ A complete SaaS landing page for selling Next.js e-commerce templates with Payst
 
 ### Prerequisites
 
-- Node.js 18+ 
+- Node.js 18+
 - MongoDB (local or Atlas)
 - Paystack account
 - Zeptomail account (optional)
@@ -112,41 +118,46 @@ A complete SaaS landing page for selling Next.js e-commerce templates with Payst
 ### Installation
 
 1. **Clone the repository:**
+
    ```bash
    git clone <repository-url>
    cd nextjs-saas-landing
    ```
 
 2. **Install dependencies:**
+
    ```bash
    npm install
    ```
 
 3. **Set up environment variables:**
+
    ```bash
    cp .env.example .env.local
    ```
 
    Update `.env.local` with your credentials:
+
    ```env
    # Paystack
    PAYSTACK_SECRET_KEY=sk_test_your_key_here
    NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY=pk_test_your_key_here
-   
+
    # MongoDB
    MONGODB_URI=mongodb://localhost:27017/ecommerce_landing
-   
+
    # Email (Zeptomail)
    ZEPTOMAIL_API_TOKEN=your_token
    SMTP_FROM_EMAIL=support@zabug.com
    ADMIN_EMAIL=admin@zabug.com
-   
+
    # App Config
    NEXT_PUBLIC_APP_URL=http://localhost:3000
    NEXT_PUBLIC_REFERRAL_COMMISSION_RATE=0.2
    ```
 
 4. **Run development server:**
+
    ```bash
    npm run dev
    ```
@@ -157,10 +168,12 @@ A complete SaaS landing page for selling Next.js e-commerce templates with Payst
 ## 🎟️ Coupon System Usage
 
 ### Sample Coupons (in `data/coupons.json`):
+
 - **TOP5** - 30% off (10 uses max, expires Nov 1, 2025)
 - **EARLYBIRD15** - 15% off (5 uses max, expires Oct 31, 2025)
 
 ### Coupon Structure:
+
 ```json
 {
   "code": "LAUNCH50",
@@ -177,6 +190,7 @@ A complete SaaS landing page for selling Next.js e-commerce templates with Payst
 ```
 
 ### How It Works:
+
 1. User enters coupon code on payment page
 2. System validates code (active, not expired, usage limit, email check)
 3. Discount applied to current price (not original)
@@ -186,6 +200,7 @@ A complete SaaS landing page for selling Next.js e-commerce templates with Payst
 ## 💳 Pricing
 
 - **Template Only:**
+
   - Original: ₦180,000
   - Current: **₦120,000** (displayed with strikethrough)
   - Includes: Source code, documentation, updates
@@ -206,6 +221,7 @@ See [`EMAIL_SETUP.md`](EMAIL_SETUP.md) for detailed Zeptomail configuration.
 See [`MONGODB_SETUP.md`](MONGODB_SETUP.md) for local and Atlas configuration.
 
 **Collections:**
+
 - `leads` - Customer payment records
 - `waitlist` - Affiliate program signups
 - `referrals` - Future: Referral tracking data
@@ -213,6 +229,7 @@ See [`MONGODB_SETUP.md`](MONGODB_SETUP.md) for local and Atlas configuration.
 ## 🚀 Deployment (AWS)
 
 ### Option 1: AWS Amplify (Recommended)
+
 1. Push code to GitHub
 2. Connect repo in AWS Amplify console
 3. Add environment variables
@@ -220,17 +237,19 @@ See [`MONGODB_SETUP.md`](MONGODB_SETUP.md) for local and Atlas configuration.
 5. Auto-deploy on git push
 
 ### Option 2: EC2
+
 1. Launch Ubuntu instance
 2. Install Node.js, PM2, Nginx
 3. Clone repo and build
 4. Configure reverse proxy
 5. Set up SSL with Certbot
 
-*See conversation history for detailed deployment steps.*
+_See conversation history for detailed deployment steps._
 
 ## 📝 Development Notes
 
 ### Cleaned Up (Removed Unused Files):
+
 - ❌ `NotificationPopover.tsx` - WebSocket notifications (not implemented)
 - ❌ `useRealtimeNotifications.ts` - Realtime hook (not used)
 - ❌ `websocket.ts` - WebSocket client (future feature)
@@ -240,6 +259,7 @@ See [`MONGODB_SETUP.md`](MONGODB_SETUP.md) for local and Atlas configuration.
 - ❌ `src/app/api/paystack/route.ts` - Redundant route
 
 ### Active & In Use:
+
 - ✅ All marketing components (Hero, Features, Pricing, FAQ, CTA)
 - ✅ Payment flow (initialize, verify, success, failed)
 - ✅ Coupon validation system
@@ -249,6 +269,7 @@ See [`MONGODB_SETUP.md`](MONGODB_SETUP.md) for local and Atlas configuration.
 - ✅ Referral system foundation (for future use)
 
 ### Test Data (Gitignored):
+
 - `data/leads.json` - Contains test payment from development
 - `data/waitlist.json` - Contains test waitlist signups
 - `.env.local` - Your secret keys and credentials
