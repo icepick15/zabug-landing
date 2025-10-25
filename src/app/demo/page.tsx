@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default function DemoPage() {
   const [copied, setCopied] = useState<string | null>(null);
@@ -24,8 +25,15 @@ export default function DemoPage() {
       {/* Header */}
       <header className="border-b border-slate-700 bg-slate-900/50 backdrop-blur">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <Link href="/" className="text-xl font-bold text-white">
-            Premium E-commerce Template
+          <Link href="/" className="flex items-center gap-2">
+            <Image 
+              src="/zabug.png" 
+              alt="Zabug" 
+              width={120} 
+              height={40}
+              className="h-8 w-auto"
+              priority
+            />
           </Link>
           <Link
             href="/"
